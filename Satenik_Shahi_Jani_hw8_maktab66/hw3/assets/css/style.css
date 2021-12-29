@@ -1,0 +1,261 @@
+body,
+.main,
+.container,
+header {
+  margin: 0%;
+  padding: 0%;
+}
+body {
+  background-color: #000022;
+}
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header p {
+  color: lightblue;
+  font-weight: 300;
+  font-size: xx-large;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-shadow: 2px 2px 4px lightskyblue;
+}
+header img {
+  width: 20%;
+  transform-origin: center top;
+  animation: rotating 2s ease infinite alternate;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blank,
+.blank2 {
+  flex-basis: 30%;
+  width: 30%;
+  position: relative;
+}
+.blank *,
+.blank2 * {
+  top: 0;
+  left: 1vw;
+  width: 20%;
+  position: absolute;
+  animation: roll 10s linear infinite forwards;
+  perspective: 1000px;
+}
+.blank {
+  animation: fall1 10s linear infinite 1s;
+}
+.img2 {
+  top: 30vh;
+  left: 15vw;
+}
+.img3 {
+  top: 70vh;
+  left: 10vw;
+}
+.img4 {
+  top: 90vh;
+  left: 3vw;
+}
+.blank2 {
+  animation: fall1 10s linear infinite;
+}
+.tree {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.row,
+.star {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1%;
+  perspective: 1000px;
+  margin: 0;
+  padding: 0;
+}
+.star {
+  width: 100%;
+  transform-origin: bottom center;
+  transition: all 1s ease;
+}
+.star img {
+  width: 20%;
+}
+.row img {
+  width: 20%;
+  transition: all 1s;
+  transform-origin: center top;
+}
+footer {
+  background-color: lightblue;
+  width: 100%;
+  height: 30vh;
+  margin: 0%;
+  display: flex;
+  align-items: center;
+}
+.text {
+  /* width: 0px;
+    visibility: hidden; */
+  background-color: lightcoral;
+  color: lightgoldenrodyellow;
+  font-size: x-large;
+  margin-left: 2%;
+  padding: 0 2%;
+  border-radius: 25px;
+  transition: 1s;
+}
+footer img {
+  width: 5%;
+}
+footer *:hover .text {
+  transition: all ease 2s;
+  width: 30vw;
+  visibility: visible;
+}
+.rolling {
+  animation: rotate 3s linear infinite;
+}
+.row img:hover {
+  transform: rotateY(40deg) scale(1.1) rotate3d(2, 2, 2, 10deg);
+}
+.star:hover {
+  transform: rotate(-15deg);
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  15% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes roll {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fall1 {
+  from {
+    opacity: 0.2;
+    transform: translateY(-40vh);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(20%);
+  }
+}
+.foot {
+  width: 100%;
+  height: 30vh;
+}
+.cards {
+  margin: 5% 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 40vh;
+  width: 100%;
+}
+.card,
+.card2 {
+  flex-basis: 30%;
+  background-color: transparent;
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.flip-card-front img {
+  width: 50%;
+}
+.card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.card2:hover:hover .flip-card-inner {
+  transform: rotateY(-180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: rgb(245, 237, 161);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  color: white;
+  transform: rotateY(180deg);
+}
+@media (max-width: 992px) {
+  .cards {
+    height: 30vh;
+  }
+  h4,
+  .text {
+    font-size: smaller;
+  }
+  footer img {
+    width: 10%;
+  }
+}
+@media (max-width: 768px) {
+  .cards {
+    height: 20vh;
+  }
+  h4,
+  .text{
+    font-size: small;
+  }
+  footer img {
+    width: 10%;
+  }
+}
